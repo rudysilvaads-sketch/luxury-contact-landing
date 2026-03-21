@@ -238,6 +238,14 @@ const ProductCard = ({
           </a>
         </div>
       </div>
+      {show3D && (
+        <ProductViewer3D
+          image={image}
+          name={name}
+          brand={brand}
+          onClose={() => setShow3D(false)}
+        />
+      )}
     </div>
   );
 };
