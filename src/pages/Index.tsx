@@ -334,7 +334,7 @@ const Index = () => {
       {/* ===== FIXED NAV ===== */}
       <nav className="fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between bg-background/60 backdrop-blur-xl border-b border-border/20" role="navigation" aria-label="Navegação principal">
         <div className="flex items-center gap-2 sm:gap-3">
-          <img src={logoLgs} alt="LGs Perfumes" className="w-12 h-12 sm:w-14 sm:h-14 object-contain" width={56} height={56} />
+          <img src={logoLgs} alt="LGs Perfumes" className="w-16 h-16 sm:w-20 sm:h-20 object-contain" width={80} height={80} />
           <span className="font-display text-base sm:text-lg gold-gradient-text">LGs Perfumes</span>
         </div>
         <div className="flex items-center gap-2 sm:gap-4">
