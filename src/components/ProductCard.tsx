@@ -106,10 +106,10 @@ const ProductCard = ({
         />
 
         {/* Image with 3D depth layer */}
-        <div className="relative overflow-hidden aspect-[4/5]" style={{ transformStyle: "preserve-3d" }}>
+        <div className="relative overflow-hidden aspect-[3/4] sm:aspect-[4/5]" style={{ transformStyle: "preserve-3d" }}>
           <img
             src={image}
-            alt={name}
+            alt={`Perfume ${name} - ${brand}`}
             className="w-full h-full object-cover"
             loading="lazy"
             style={{
