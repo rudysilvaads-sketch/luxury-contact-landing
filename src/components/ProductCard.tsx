@@ -1,5 +1,6 @@
 import { useRef, useState, useCallback } from "react";
-import { MessageCircle, Sparkles } from "lucide-react";
+import { MessageCircle, Sparkles, Eye } from "lucide-react";
+import ProductViewer3D from "./ProductViewer3D";
 
 interface Accord {
   name: string;
