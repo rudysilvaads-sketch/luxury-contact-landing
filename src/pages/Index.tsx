@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { MessageCircle, Instagram, ChevronDown, Star, Sparkles } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import heroBg from "@/assets/hero-bg.jpg";
+import logoLgs from "@/assets/logo-lgs.png";
 import imgSalvo from "@/assets/perfume-salvo.jpg";
 import imgNo2Men from "@/assets/perfume-no2men.jpg";
 import imgLeonie from "@/assets/perfume-leonie.jpg";
