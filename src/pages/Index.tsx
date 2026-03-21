@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { MessageCircle, Instagram, ChevronDown, Star, Sparkles } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import heroBg from "@/assets/hero-bg.jpg";
+import logoLgs from "@/assets/logo-lgs.png";
 import imgSalvo from "@/assets/perfume-salvo.jpg";
 import imgNo2Men from "@/assets/perfume-no2men.jpg";
 import imgLeonie from "@/assets/perfume-leonie.jpg";
@@ -165,6 +166,28 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
+      {/* ===== FIXED NAV ===== */}
+      <nav className="fixed top-0 left-0 right-0 z-50 py-4 px-6 flex items-center justify-between bg-background/60 backdrop-blur-xl border-b border-border/20">
+        <div className="flex items-center gap-3">
+          <img src={logoLgs} alt="LGs Perfumes" className="w-10 h-10 object-contain" />
+          <span className="font-display text-lg gold-gradient-text hidden sm:block">LGs Perfumes</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <a href="#catalogo" className="font-body text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-gold transition-colors duration-300">
+            Catálogo
+          </a>
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary text-primary-foreground font-body text-[11px] font-medium tracking-wider uppercase transition-all duration-400 hover:shadow-[0_2px_20px_hsl(42_65%_52%/0.35)] active:scale-[0.97]"
+          >
+            <MessageCircle className="w-3.5 h-3.5" />
+            WhatsApp
+          </a>
+        </div>
+      </nav>
+
       {/* ===== HERO ===== */}
       <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden grain-overlay">
         {/* Parallax BG */}
@@ -179,33 +202,36 @@ const Index = () => {
           />
         </div>
         {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/30 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/40 via-transparent to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/20 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-transparent to-background/50" />
 
         {/* Content */}
         <div className="relative z-10 text-center px-6 max-w-3xl">
-          <div className="animate-hero-1">
-            <p className="font-body text-[11px] tracking-[0.5em] uppercase text-gold/80 mb-8">
-              Catálogo Digital Exclusivo
-            </p>
+          {/* Logo */}
+          <div className="animate-hero-1 flex justify-center mb-8">
+            <img
+              src={logoLgs}
+              alt="LGs Perfumes"
+              className="w-36 h-36 sm:w-48 sm:h-48 object-contain drop-shadow-[0_0_40px_hsl(42_65%_52%/0.3)]"
+            />
           </div>
 
           <div className="animate-hero-2">
-            <h1 className="font-display text-6xl sm:text-8xl md:text-9xl font-light text-foreground leading-[0.85] mb-2" style={{ letterSpacing: '-0.02em' }}>
+            <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-light text-foreground leading-[0.85] mb-2" style={{ letterSpacing: '-0.02em' }}>
               LGs
             </h1>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-light italic gold-gradient-text leading-tight mb-6" style={{ letterSpacing: '0.1em' }}>
-              Perfumes
+            <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-light italic gold-gradient-text leading-tight mb-4" style={{ letterSpacing: '0.15em' }}>
+              Perfumes Importados
             </h1>
           </div>
 
           <div className="animate-hero-line flex justify-center mb-8">
-            <div className="h-px w-32 bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+            <div className="h-px w-40 bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
           </div>
 
           <div className="animate-hero-3">
-            <p className="font-body text-sm sm:text-base text-foreground/60 max-w-md mx-auto mb-12 leading-relaxed tracking-wide">
-              Fragrâncias importadas selecionadas com exclusividade.
+            <p className="font-body text-sm sm:text-base text-foreground/55 max-w-md mx-auto mb-12 leading-relaxed tracking-wide">
+              Fragrâncias selecionadas com exclusividade.
               <br />
               <span className="text-gold/70">Elegância que marca presença.</span>
             </p>
@@ -382,8 +408,9 @@ const Index = () => {
       {/* ===== FOOTER ===== */}
       <footer className="py-12 border-t border-border/30">
         <div className="container flex flex-col items-center gap-6 text-center">
-          <div>
-            <p className="font-display text-2xl gold-gradient-text mb-1">LGs Perfumes</p>
+          <div className="flex flex-col items-center gap-2">
+            <img src={logoLgs} alt="LGs Perfumes" className="w-16 h-16 object-contain" />
+            <p className="font-display text-2xl gold-gradient-text">LGs Perfumes</p>
             <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground">Fragrâncias Importadas</p>
           </div>
           <a
