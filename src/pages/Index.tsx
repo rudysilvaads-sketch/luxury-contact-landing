@@ -496,6 +496,8 @@ const Index = () => {
             ))}
           </div>
         </div>
+      </section>
+
       {/* ===== SOCIAL PROOF ===== */}
       <section className="py-20 bg-surface-elevated relative overflow-hidden" ref={useScrollReveal()}>
         <div className="absolute inset-0 animate-shimmer-gold" />
