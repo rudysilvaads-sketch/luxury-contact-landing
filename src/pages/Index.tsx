@@ -370,6 +370,24 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/20 to-background" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-transparent to-background/50" />
 
+        {/* Watermark — subtle brand presence */}
+        <div
+          className="absolute inset-0 flex items-center justify-center pointer-events-none z-[2]"
+          style={{ transform: `translateY(${scrollY * 0.08}px)` }}
+        >
+          <img
+            src={logoLgs}
+            alt=""
+            aria-hidden="true"
+            className="w-[60vw] sm:w-[50vw] md:w-[40vw] max-w-[600px] object-contain select-none"
+            style={{
+              opacity: 0.04,
+              filter: 'grayscale(30%) brightness(1.3)',
+              mixBlendMode: 'soft-light',
+            }}
+          />
+        </div>
+
         {/* Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-3xl w-full">
           {/* Logo */}
