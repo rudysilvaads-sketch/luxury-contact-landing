@@ -443,20 +443,23 @@ const Index = () => {
       </header>
 
       {/* ===== STATS BAR ===== */}
-      <section className="relative py-8 sm:py-12 border-y border-border/30 bg-surface-elevated" ref={statsRef} aria-label="Estatísticas">
+      <section className="relative py-10 sm:py-14 border-y border-primary/15 bg-gradient-to-b from-surface-elevated to-background" ref={statsRef} aria-label="Estatísticas">
         <div className="container px-4 sm:px-6">
-          <div className="grid grid-cols-3 gap-4 sm:gap-8">
+          <div className="grid grid-cols-3 gap-6 sm:gap-12">
             {stats.map((stat, i) => (
               <div
                 key={stat.label}
-                className="text-center"
+                className="text-center relative"
                 data-reveal
                 data-delay={String(i * 120)}
               >
-                <p className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold gold-gradient-text mb-0.5 sm:mb-1">
+                {i > 0 && (
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-px h-10 bg-gradient-to-b from-transparent via-primary/25 to-transparent hidden sm:block" />
+                )}
+                <p className="font-display text-3xl sm:text-4xl md:text-5xl font-bold gold-gradient-text mb-1 sm:mb-2 tracking-tight">
                   {stat.value}
                 </p>
-                <p className="font-body text-[10px] sm:text-xs md:text-sm text-muted-foreground tracking-wide">
+                <p className="font-body text-[10px] sm:text-xs md:text-sm text-foreground/60 tracking-[0.15em] uppercase">
                   {stat.label}
                 </p>
               </div>
