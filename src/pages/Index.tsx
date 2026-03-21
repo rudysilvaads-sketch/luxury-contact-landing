@@ -261,7 +261,16 @@ function useScrollReveal() {
 function useParallax() {
   const [offset, setOffset] = useState(0);
   useEffect(() => {
-    const handleScroll = () => setOffset(window.scrollY);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setOffset(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -332,7 +341,7 @@ const Index = () => {
       </Helmet>
 
       {/* ===== FIXED NAV ===== */}
-      <nav className="fixed top-0 left-0 right-0 z-50 pt-5 pb-3 sm:pt-6 sm:pb-4 px-4 sm:px-6 flex items-center justify-between bg-background/60 backdrop-blur-xl border-b border-border/20" role="navigation" aria-label="Navegação principal">
+      <nav className="fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between bg-background/60 backdrop-blur-xl border-b border-border/20" role="navigation" aria-label="Navegação principal">
         <div className="flex items-center gap-2 sm:gap-3">
           <img src={logoLgs} alt="LGs Perfumes" className="w-20 h-20 sm:w-24 sm:h-24 object-contain" width={96} height={96} />
           <span className="font-display text-base sm:text-lg gold-gradient-text">LGs Perfumes</span>
@@ -355,7 +364,7 @@ const Index = () => {
       </nav>
 
       {/* ===== HERO ===== */}
-      <header className="relative h-[100svh] min-h-[600px] sm:min-h-[700px] flex items-center justify-center overflow-hidden grain-overlay">
+      <header className="relative h-[100svh] min-h-[600px] sm:min-h-[700px] flex items-center justify-center overflow-hidden">
         {/* Parallax BG */}
         <div
           className="absolute inset-0 w-full h-[120%] -top-[10%]"
@@ -394,7 +403,7 @@ const Index = () => {
         {/* Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-3xl w-full">
           {/* Logo only */}
-          <div className="animate-hero-1 flex justify-center mb-6 sm:mb-8">
+          <div className="animate-hero-1 flex justify-center mb-6 sm:mb-8 mt-10 sm:mt-14">
             <img
               src={logoLgs}
               alt="LGs Perfumes"
