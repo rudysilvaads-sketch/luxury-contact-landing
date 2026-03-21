@@ -368,9 +368,10 @@ const Index = () => {
             fetchPriority="high"
           />
         </div>
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/20 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-transparent to-background/50" />
+        {/* Gradient overlays — stronger for contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/40 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60" />
+        <div className="absolute inset-0 bg-background/25" />
 
         {/* Watermark — subtle brand presence */}
         <div
@@ -392,7 +393,7 @@ const Index = () => {
 
         {/* Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-3xl w-full">
-          {/* Logo */}
+          {/* Logo only */}
           <div className="animate-hero-1 flex justify-center mb-6 sm:mb-8">
             <img
               src={logoLgs}
@@ -403,24 +404,15 @@ const Index = () => {
             />
           </div>
 
-          <div className="animate-hero-2">
-            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light text-foreground leading-[0.85] mb-2" style={{ letterSpacing: '-0.02em', lineHeight: '0.85' }}>
-              LGs
-              <span className="block font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light italic gold-gradient-text leading-tight mt-1 sm:mt-2" style={{ letterSpacing: '0.15em', lineHeight: '1.2' }}>
-                Perfumes Importados
-              </span>
-            </h1>
-          </div>
-
           <div className="animate-hero-line flex justify-center my-5 sm:my-8">
             <div className="h-px w-28 sm:w-40 bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
           </div>
 
           <div className="animate-hero-3">
-            <p className="font-body text-xs sm:text-sm md:text-base text-foreground/55 max-w-xs sm:max-w-md mx-auto mb-8 sm:mb-12 leading-relaxed tracking-wide">
+            <p className="font-body text-sm sm:text-base md:text-lg text-foreground/80 max-w-xs sm:max-w-md mx-auto mb-8 sm:mb-12 leading-relaxed tracking-wide">
               Fragrâncias selecionadas com exclusividade.
               <br />
-              <span className="text-gold/70">Elegância que marca presença.</span>
+              <span className="text-gold">Elegância que marca presença.</span>
             </p>
           </div>
 
