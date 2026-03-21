@@ -85,7 +85,7 @@ const products = [
     baseNotes: "Baunilha, Âmbar, Madeira Seca, Benjoim e Ládano",
     pricePix: "R$ 240,00",
     priceCredit: "R$ 266,40",
-    inspiration: "Sauvage",
+    inspiration: "Sauvage Elixir",
     accords: [
       { name: "âmbar", color: "#d4a04a" },
       { name: "fresco especiado", color: "#7cb87a" },
