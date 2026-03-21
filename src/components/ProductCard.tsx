@@ -1,5 +1,6 @@
 import { useRef, useState, useCallback } from "react";
-import { MessageCircle, Sparkles } from "lucide-react";
+import { MessageCircle, Sparkles, Eye } from "lucide-react";
+import ProductViewer3D from "./ProductViewer3D";
 
 interface Accord {
   name: string;
@@ -39,6 +40,7 @@ const ProductCard = ({
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const [show3D, setShow3D] = useState(false);
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -146,6 +148,19 @@ const ProductCard = ({
               </span>
             </div>
           )}
+
+          {/* 3D View button */}
+          <button
+            onClick={() => setShow3D(true)}
+            className="absolute top-4 right-4 z-10 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-gold/20 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer active:scale-95"
+            style={{
+              transform: `translateZ(30px) translateX(${tilt.y * 0.5}px) translateY(${tilt.x * -0.5}px)`,
+              transition: isHovered ? "transform 0.1s ease-out, opacity 0.3s" : "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s",
+            }}
+          >
+            <Eye className="w-3 h-3 text-gold" />
+            <span className="font-body text-[10px] tracking-wider uppercase text-gold">3D</span>
+          </button>
         </div>
 
         {/* Content — also subtly parallax */}
@@ -223,6 +238,14 @@ const ProductCard = ({
           </a>
         </div>
       </div>
+      {show3D && (
+        <ProductViewer3D
+          image={image}
+          name={name}
+          brand={brand}
+          onClose={() => setShow3D(false)}
+        />
+      )}
     </div>
   );
 };
