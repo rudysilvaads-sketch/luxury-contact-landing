@@ -409,7 +409,7 @@ const Index = () => {
           </div>
 
           <div className="animate-hero-3">
-            <p className="font-body text-sm sm:text-base md:text-lg text-foreground/80 max-w-xs sm:max-w-md mx-auto mb-8 sm:mb-12 leading-relaxed tracking-wide">
+            <p className="font-display text-base sm:text-xl md:text-2xl italic text-foreground/80 max-w-sm sm:max-w-lg mx-auto mb-8 sm:mb-12 leading-relaxed tracking-wide" style={{ letterSpacing: '0.06em' }}>
               Fragrâncias selecionadas com exclusividade.
               <br />
               <span className="text-gold">Elegância que marca presença.</span>
