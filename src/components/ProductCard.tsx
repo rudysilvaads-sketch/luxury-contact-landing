@@ -150,7 +150,7 @@ const ProductCard = ({
 
         {/* Content — also subtly parallax */}
         <div
-          className="p-6 space-y-5 relative"
+          className="p-4 sm:p-6 space-y-4 sm:space-y-5 relative"
           style={{
             transform: `translateZ(10px)`,
           }}
