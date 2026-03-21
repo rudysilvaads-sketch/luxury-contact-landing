@@ -148,6 +148,19 @@ const ProductCard = ({
               </span>
             </div>
           )}
+
+          {/* 3D View button */}
+          <button
+            onClick={() => setShow3D(true)}
+            className="absolute top-4 right-4 z-10 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-gold/20 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer active:scale-95"
+            style={{
+              transform: `translateZ(30px) translateX(${tilt.y * 0.5}px) translateY(${tilt.x * -0.5}px)`,
+              transition: isHovered ? "transform 0.1s ease-out, opacity 0.3s" : "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s",
+            }}
+          >
+            <Eye className="w-3 h-3 text-gold" />
+            <span className="font-body text-[10px] tracking-wider uppercase text-gold">3D</span>
+          </button>
         </div>
 
         {/* Content — also subtly parallax */}
