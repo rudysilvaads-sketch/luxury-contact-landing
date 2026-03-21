@@ -106,10 +106,10 @@ const ProductCard = ({
         />
 
         {/* Image with 3D depth layer */}
-        <div className="relative overflow-hidden aspect-[4/5]" style={{ transformStyle: "preserve-3d" }}>
+        <div className="relative overflow-hidden aspect-[3/4] sm:aspect-[4/5]" style={{ transformStyle: "preserve-3d" }}>
           <img
             src={image}
-            alt={name}
+            alt={`Perfume ${name} - ${brand}`}
             className="w-full h-full object-cover"
             loading="lazy"
             style={{
@@ -150,13 +150,13 @@ const ProductCard = ({
 
         {/* Content — also subtly parallax */}
         <div
-          className="p-6 space-y-5 relative"
+          className="p-4 sm:p-6 space-y-4 sm:space-y-5 relative"
           style={{
             transform: `translateZ(10px)`,
           }}
         >
           <div>
-            <h3 className="font-display text-3xl font-medium text-foreground leading-none tracking-tight">
+            <h3 className="font-display text-2xl sm:text-3xl font-medium text-foreground leading-none tracking-tight">
               {name}
             </h3>
             <p className="font-body text-sm text-gold-muted mt-1 tracking-wide">{brand}</p>

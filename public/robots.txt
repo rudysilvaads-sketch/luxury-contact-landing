@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://luxury-contact-landing.lovable.app/sitemap.xml
