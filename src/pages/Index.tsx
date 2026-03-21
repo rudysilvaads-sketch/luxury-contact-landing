@@ -397,7 +397,7 @@ const Index = () => {
             <img
               src={logoLgs}
               alt="LGs Perfumes"
-              className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 object-contain drop-shadow-[0_0_40px_hsl(42_65%_52%/0.3)]"
+              className="w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 object-contain drop-shadow-[0_0_50px_hsl(42_65%_52%/0.4)]"
               width={192}
               height={192}
             />
