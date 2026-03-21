@@ -8,6 +8,12 @@ import imgNo2Men from "@/assets/perfume-no2men.jpg";
 import imgLeonie from "@/assets/perfume-leonie.jpg";
 import imgAsad from "@/assets/perfume-asad.jpg";
 import imgVivacite from "@/assets/perfume-vivacite.jpg";
+import imgComo from "@/assets/perfume-como.jpg";
+import imgYara from "@/assets/perfume-yara.jpg";
+import imgFakhar from "@/assets/perfume-fakhar.jpg";
+import imgVictorioso from "@/assets/perfume-victorioso.jpg";
+import imgAttar from "@/assets/perfume-attar.jpg";
+import imgSabah from "@/assets/perfume-sabah.jpg";
 
 const WHATSAPP_NUMBER = "5511988742967";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de ver o catálogo completo de perfumes.")}`;
@@ -354,6 +360,136 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, i) => (
+              <div key={product.name} data-reveal data-delay={String(i * 100)}>
+                <ProductCard {...product} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== SOB ENCOMENDA ===== */}
+      <section className="py-24 sm:py-32 bg-surface-elevated relative" ref={useScrollReveal()}>
+        <div className="container">
+          <div className="text-center mb-20 space-y-4" data-reveal>
+            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-gold">
+              Pedidos Sob Encomenda
+            </p>
+            <h2 className="font-display text-4xl sm:text-6xl font-light text-foreground leading-tight">
+              Esgotados · Sob Encomenda
+            </h2>
+            <GoldDivider />
+            <p className="font-body text-sm text-muted-foreground max-w-lg mx-auto">
+              Fragrâncias temporariamente esgotadas. Faça sua encomenda via WhatsApp e garantimos a sua.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Como Moiselle",
+                brand: "Maison Alhambra",
+                image: imgComo,
+                category: "Oriental Floral",
+                topNotes: "Rosa, Lírio e Bergamota",
+                heartNotes: "Jasmim, Orquídea e Flor de Laranjeira",
+                baseNotes: "Almíscar, Baunilha e Sândalo",
+                pricePix: "Sob consulta",
+                priceCredit: "Sob consulta",
+                accords: [
+                  { name: "floral", color: "#d4908a" },
+                  { name: "oriental", color: "#d4a04a" },
+                  { name: "almiscarado", color: "#c8a898" },
+                  { name: "doce", color: "#d4c090" },
+                ],
+              },
+              {
+                name: "Yara",
+                brand: "Lattafa Perfumes",
+                image: imgYara,
+                category: "Oriental Baunilha",
+                topNotes: "Orquídea e Tangerina",
+                heartNotes: "Gourmand e Caramelo",
+                baseNotes: "Baunilha, Almíscar Branco e Sândalo",
+                pricePix: "Sob consulta",
+                priceCredit: "Sob consulta",
+                accords: [
+                  { name: "baunilha", color: "#d4c090" },
+                  { name: "doce", color: "#d4908a" },
+                  { name: "almiscarado", color: "#c8a898" },
+                  { name: "floral", color: "#a890c4" },
+                ],
+              },
+              {
+                name: "Fakhar",
+                brand: "Lattafa Perfumes",
+                image: imgFakhar,
+                category: "Oriental",
+                topNotes: "Maçã e Bergamota",
+                heartNotes: "Rosa, Jasmim e Açafrão",
+                baseNotes: "Âmbar, Almíscar, Oud e Sândalo",
+                pricePix: "Sob consulta",
+                priceCredit: "Sob consulta",
+                accords: [
+                  { name: "âmbar", color: "#d4a04a" },
+                  { name: "oud", color: "#8a6a4a" },
+                  { name: "floral", color: "#d4908a" },
+                  { name: "amadeirado", color: "#b8956a" },
+                ],
+              },
+              {
+                name: "Victorioso",
+                brand: "Maison Alhambra",
+                image: imgVictorioso,
+                category: "Aromático Masculino",
+                topNotes: "Toranja, Abacaxi e Bergamota",
+                heartNotes: "Lavanda, Hortelã e Gerânio",
+                baseNotes: "Vetiver, Cedro, Almíscar e Âmbar",
+                pricePix: "Sob consulta",
+                priceCredit: "Sob consulta",
+                inspiration: "Invictus",
+                accords: [
+                  { name: "fresco", color: "#7cb87a" },
+                  { name: "aromático", color: "#8cb87a" },
+                  { name: "cítrico", color: "#d4c36a" },
+                  { name: "amadeirado", color: "#b8956a" },
+                ],
+              },
+              {
+                name: "Attar Al Wesal",
+                brand: "Lattafa Perfumes",
+                image: imgAttar,
+                category: "Oriental",
+                topNotes: "Açafrão e Canela",
+                heartNotes: "Rosa, Oud e Incenso",
+                baseNotes: "Almíscar, Âmbar e Sândalo",
+                pricePix: "Sob consulta",
+                priceCredit: "Sob consulta",
+                accords: [
+                  { name: "oud", color: "#8a6a4a" },
+                  { name: "âmbar", color: "#d4a04a" },
+                  { name: "especiado", color: "#7cb87a" },
+                  { name: "amadeirado", color: "#b8956a" },
+                ],
+              },
+              {
+                name: "Sabah Al Ward",
+                brand: "Lattafa Perfumes",
+                image: imgSabah,
+                category: "Oriental Floral",
+                topNotes: "Rosa Damascena e Açafrão",
+                heartNotes: "Oud, Jasmim e Patchouli",
+                baseNotes: "Almíscar, Âmbar e Sândalo",
+                pricePix: "Sob consulta",
+                priceCredit: "Sob consulta",
+                accords: [
+                  { name: "rosa", color: "#c47090" },
+                  { name: "oud", color: "#8a6a4a" },
+                  { name: "floral", color: "#d4908a" },
+                  { name: "amadeirado", color: "#b8956a" },
+                ],
+              },
+            ].map((product, i) => (
               <div key={product.name} data-reveal data-delay={String(i * 100)}>
                 <ProductCard {...product} />
               </div>
