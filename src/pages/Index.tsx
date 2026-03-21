@@ -408,8 +408,9 @@ const Index = () => {
       {/* ===== FOOTER ===== */}
       <footer className="py-12 border-t border-border/30">
         <div className="container flex flex-col items-center gap-6 text-center">
-          <div>
-            <p className="font-display text-2xl gold-gradient-text mb-1">LGs Perfumes</p>
+          <div className="flex flex-col items-center gap-2">
+            <img src={logoLgs} alt="LGs Perfumes" className="w-16 h-16 object-contain" />
+            <p className="font-display text-2xl gold-gradient-text">LGs Perfumes</p>
             <p className="font-body text-[10px] tracking-[0.3em] uppercase text-muted-foreground">Fragrâncias Importadas</p>
           </div>
           <a
