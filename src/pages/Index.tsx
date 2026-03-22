@@ -392,8 +392,8 @@ const Index = () => {
       {/* ===== FIXED NAV ===== */}
       <nav className="fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between bg-background/60 backdrop-blur-xl border-b border-border/20" role="navigation" aria-label="Navegação principal">
         <div className="flex items-center gap-2 sm:gap-3">
-          <img src={logoLgs} alt="LGs Perfumes" className="w-20 h-20 sm:w-24 sm:h-24 object-contain" width={96} height={96} />
-          <span className="font-display text-base sm:text-lg gold-gradient-text">LGs Perfumes</span>
+          <img src={logoLgs} alt="LGs Perfumes" className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain" width={112} height={112} />
+          <span className="font-display text-base sm:text-lg md:text-2xl gold-gradient-text">LGs Perfumes</span>
         </div>
         <div className="flex items-center gap-2 sm:gap-4">
           <a href="#catalogo" className="font-body text-[10px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-muted-foreground hover:text-gold transition-colors duration-300">
@@ -456,7 +456,7 @@ const Index = () => {
             <img
               src={logoLgs}
               alt="LGs Perfumes"
-              className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain drop-shadow-[0_0_50px_hsl(42_65%_52%/0.4)]"
+              className="w-56 h-56 sm:w-64 sm:h-64 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain drop-shadow-[0_0_50px_hsl(42_65%_52%/0.4)]"
               width={192}
               height={192}
             />
@@ -631,9 +631,9 @@ const Index = () => {
 
           <GenderTabs active={genderFilter} onChange={setGenderFilter} />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+          <div key={genderFilter} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
             {filteredProducts.map((product, i) => (
-              <article key={product.name} data-reveal data-delay={String(i * 100)}>
+              <article key={product.name} className="animate-fade-in" style={{ animationDelay: `${i * 80}ms`, animationFillMode: "both" }}>
                 <ProductCard {...product} />
               </article>
             ))}
@@ -675,9 +675,9 @@ const Index = () => {
 
           <GenderTabs active={genderFilterEncomenda} onChange={setGenderFilterEncomenda} />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+          <div key={genderFilterEncomenda} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
             {filteredEncomenda.map((product, i) => (
-              <article key={product.name} data-reveal data-delay={String(i * 100)}>
+              <article key={product.name} className="animate-fade-in" style={{ animationDelay: `${i * 80}ms`, animationFillMode: "both" }}>
                 <ProductCard {...product} />
               </article>
             ))}
