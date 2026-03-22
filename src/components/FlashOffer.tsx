@@ -63,7 +63,7 @@ export default function FlashOffer() {
           </div>
 
           <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-light text-foreground">
-            <span className="text-gold">10% OFF</span> no próximo pedido
+            <span className="text-gold">5% OFF</span> no próximo pedido
           </h3>
 
           <p className="font-body text-xs sm:text-sm text-muted-foreground max-w-md mx-auto">
