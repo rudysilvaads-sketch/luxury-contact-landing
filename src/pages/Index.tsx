@@ -4,6 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import GoldParticles from "@/components/GoldParticles";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import FlashOffer from "@/components/FlashOffer";
+import InstallPrompt from "@/components/InstallPrompt";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoLgs from "@/assets/logo-lgs.png";
 import imgSalvo from "@/assets/perfume-salvo-bg.jpg";
