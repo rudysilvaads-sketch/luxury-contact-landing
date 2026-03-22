@@ -3,6 +3,7 @@ import { MessageCircle, Instagram, ChevronDown, Star, Sparkles, Phone, MapPin, C
 import ProductCard from "@/components/ProductCard";
 import GoldParticles from "@/components/GoldParticles";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import FlashOffer from "@/components/FlashOffer";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoLgs from "@/assets/logo-lgs.png";
 import imgSalvo from "@/assets/perfume-salvo-bg.jpg";
@@ -648,7 +649,7 @@ const Index = () => {
                 <img
                   src={imgAsad}
                   alt="Asad - Lattafa Perfumes"
-                  className="relative w-64 sm:w-72 md:w-80 lg:w-96 aspect-[3/4] object-cover rounded-2xl shadow-2xl animate-float ring-1 ring-primary/10"
+                  className="relative w-48 sm:w-64 md:w-72 lg:w-80 aspect-[3/4] object-contain rounded-2xl shadow-2xl animate-float ring-1 ring-primary/10"
                   loading="lazy"
                 />
                 {/* Floating badge */}
@@ -735,6 +736,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* ===== FLASH OFFER ===== */}
+      <FlashOffer />
 
       {/* ===== SOCIAL PROOF ===== */}
       <section className="py-14 sm:py-20 bg-surface-elevated relative overflow-hidden" ref={useScrollReveal()} aria-label="Depoimentos">
