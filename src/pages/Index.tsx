@@ -386,6 +386,9 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
+      {/* ===== GOLD PARTICLES ===== */}
+      <GoldParticles />
+
       {/* ===== FIXED NAV ===== */}
       <nav className="fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between bg-background/60 backdrop-blur-xl border-b border-border/20" role="navigation" aria-label="Navegação principal">
         <div className="flex items-center gap-2 sm:gap-3">
