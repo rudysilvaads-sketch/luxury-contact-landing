@@ -360,18 +360,6 @@ const Index = () => {
       <Helmet>
         <title>LGs Perfumes — Perfumes Importados em SP | Fragrâncias Exclusivas</title>
         <meta name="description" content="Compre perfumes importados originais em São Paulo. Lattafa, Maison Alhambra e mais. Preços a partir de R$200. Parcelamento em 2x. Atendimento via WhatsApp." />
-        <link rel="canonical" href="https://luxury-contact-landing.lovable.app/" />
-        <meta name="keywords" content="perfumes importados, perfumes árabes, lattafa, maison alhambra, perfumes originais, comprar perfume, perfume masculino, perfume feminino, são paulo" />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://luxury-contact-landing.lovable.app/" />
-        <meta property="og:title" content="LGs Perfumes — Perfumes Importados Exclusivos em SP" />
-        <meta property="og:description" content="Catálogo de perfumes importados originais. Lattafa, Maison Alhambra. Preços a partir de R$200 no Pix. Atendimento via WhatsApp." />
-        <meta property="og:locale" content="pt_BR" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="LGs Perfumes — Perfumes Importados Exclusivos" />
-        <meta name="twitter:description" content="Perfumes importados originais com atendimento personalizado via WhatsApp." />
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
       <Suspense fallback={null}><GoldParticles /></Suspense>
