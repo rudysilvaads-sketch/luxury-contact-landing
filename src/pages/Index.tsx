@@ -346,7 +346,7 @@ const Index = () => {
   const productsRef = useScrollReveal();
   const ctaRef = useScrollReveal();
   const statsRef = useScrollReveal();
-  const scrollY = useParallax();
+  
   const [genderFilter, setGenderFilter] = useState<GenderFilter>("todos");
   const [genderFilterEncomenda, setGenderFilterEncomenda] = useState<GenderFilter>("todos");
 
