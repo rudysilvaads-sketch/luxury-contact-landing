@@ -611,8 +611,10 @@ const Index = () => {
             </p>
           </div>
 
+          <GenderTabs active={genderFilterEncomenda} onChange={setGenderFilterEncomenda} />
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-            {sobEncomenda.map((product, i) => (
+            {filteredEncomenda.map((product, i) => (
               <article key={product.name} data-reveal data-delay={String(i * 100)}>
                 <ProductCard {...product} />
               </article>
