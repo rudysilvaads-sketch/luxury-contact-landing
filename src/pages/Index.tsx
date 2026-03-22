@@ -326,11 +326,40 @@ const jsonLd = {
   }))
 };
 
+type GenderFilter = "todos" | "masculino" | "feminino";
+
+const GenderTabs = ({ active, onChange }: { active: GenderFilter; onChange: (g: GenderFilter) => void }) => (
+  <div className="flex items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
+    {([
+      { key: "todos" as const, label: "Todos" },
+      { key: "masculino" as const, label: "Masculino" },
+      { key: "feminino" as const, label: "Feminino" },
+    ]).map(({ key, label }) => (
+      <button
+        key={key}
+        onClick={() => onChange(key)}
+        className={`font-body text-[10px] sm:text-xs tracking-[0.15em] uppercase px-4 sm:px-6 py-2 sm:py-2.5 rounded-full border transition-all duration-300 active:scale-95 cursor-pointer ${
+          active === key
+            ? "bg-primary text-primary-foreground border-primary shadow-[0_2px_16px_hsl(42_65%_52%/0.3)]"
+            : "bg-transparent text-muted-foreground border-border/40 hover:text-gold hover:border-primary/30"
+        }`}
+      >
+        {label}
+      </button>
+    ))}
+  </div>
+);
+
 const Index = () => {
   const productsRef = useScrollReveal();
   const ctaRef = useScrollReveal();
   const statsRef = useScrollReveal();
   const scrollY = useParallax();
+  const [genderFilter, setGenderFilter] = useState<GenderFilter>("todos");
+  const [genderFilterEncomenda, setGenderFilterEncomenda] = useState<GenderFilter>("todos");
+
+  const filteredProducts = genderFilter === "todos" ? products : products.filter(p => p.gender === genderFilter);
+  const filteredEncomenda = genderFilterEncomenda === "todos" ? sobEncomenda : sobEncomenda.filter(p => p.gender === genderFilterEncomenda);
 
   return (
     <div className="min-h-screen bg-background relative" style={{ backgroundImage: "linear-gradient(to bottom, hsl(30 10% 5% / 0.7), hsl(30 10% 5% / 0.6)), url('/images/marble-bg.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center" }}>
