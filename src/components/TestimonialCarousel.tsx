@@ -27,7 +27,7 @@ const testimonials = [
     stars: 5,
   },
   {
-    quote: "Já comprei 6 perfumes aqui e todos originais, com nota fiscal. Preço honesto e qualidade garantida. Nota 10!",
+    quote: "Presente perfeito! Comprei o La Vivacité pra minha esposa e ela amou. A embalagem chegou impecável, parecia presente de grife.",
     name: "Lucas T.",
     since: "cliente desde 2024",
     stars: 5,
