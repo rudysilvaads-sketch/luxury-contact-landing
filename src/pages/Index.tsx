@@ -1,11 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { MessageCircle, Instagram, ChevronDown, Star, Sparkles, Phone, MapPin, Clock, Shield, Truck, Award, HeartHandshake } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
-import GoldParticles from "@/components/GoldParticles";
-import TestimonialCarousel from "@/components/TestimonialCarousel";
-import FlashOffer from "@/components/FlashOffer";
-import InstallPrompt from "@/components/InstallPrompt";
-import heroBg from "@/assets/hero-bg.jpg";
+import { Helmet } from "react-helmet-async";
+
+const GoldParticles = lazy(() => import("@/components/GoldParticles"));
+const TestimonialCarousel = lazy(() => import("@/components/TestimonialCarousel"));
+const FlashOffer = lazy(() => import("@/components/FlashOffer"));
+const InstallPrompt = lazy(() => import("@/components/InstallPrompt"));
 import logoLgs from "@/assets/logo-lgs.png";
 import imgSalvo from "@/assets/perfume-salvo-bg.jpg";
 import imgNo2Men from "@/assets/perfume-no2men-bg.jpg";
