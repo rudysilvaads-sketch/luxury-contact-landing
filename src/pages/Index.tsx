@@ -25,6 +25,7 @@ const products = [
     brand: "Maison Alhambra",
     image: imgSalvo,
     category: "Oriental Fougère",
+    gender: "masculino" as const,
     topNotes: "Bergamota",
     heartNotes: "Lavanda, Pimenta de Szechuan, Anis Estrelado e Noz-moscada",
     baseNotes: "Ambroxan e Baunilha",
@@ -44,6 +45,7 @@ const products = [
     brand: "Maison Alhambra",
     image: imgNo2Men,
     category: "Aromático Masculino",
+    gender: "masculino" as const,
     topNotes: "Bergamota e Lavanda",
     heartNotes: "Gengibre e Cardamomo",
     baseNotes: "Vetiver, Incenso, Almíscar, Sândalo, Ládano e Madeira Guaiac",
@@ -63,6 +65,7 @@ const products = [
     brand: "Maison Alhambra",
     image: imgLeonie,
     category: "Floral",
+    gender: "feminino" as const,
     topNotes: "Lavanda, Mandarina, Petitgrain e Groselha Preta",
     heartNotes: "Flor de Laranjeira, Lavanda e Jasmim",
     baseNotes: "Almíscar, Baunilha, Cedro e Âmbar Cinzento",
@@ -81,6 +84,7 @@ const products = [
     brand: "Lattafa Perfumes",
     image: imgAsad,
     category: "Oriental",
+    gender: "masculino" as const,
     topNotes: "Pimenta Preta, Tabaco e Abacaxi",
     heartNotes: "Patchouli, Café e Íris",
     baseNotes: "Baunilha, Âmbar, Madeira Seca, Benjoim e Ládano",
@@ -100,6 +104,7 @@ const products = [
     brand: "Maison Alhambra",
     image: imgVivacite,
     category: "Floral Frutado",
+    gender: "feminino" as const,
     topNotes: "Groselha Preta e Pera",
     heartNotes: "Íris, Flor de Laranjeira e Jasmim",
     baseNotes: "Patchouli, Fava Tonka, Praliné e Baunilha",
@@ -122,6 +127,7 @@ const sobEncomenda = [
     brand: "Maison Alhambra",
     image: imgComo,
     category: "Floral Cítrico",
+    gender: "feminino" as const,
     topNotes: "Laranja, Mandarina, Bergamota e Flor de Laranjeira",
     heartNotes: "Rosa Turca, Jasmim, Mimosa e Ylang-Ylang",
     baseNotes: "Patchouli, Almíscar Branco, Baunilha, Vetiver, Fava Tonka e Opoponax",
@@ -140,6 +146,7 @@ const sobEncomenda = [
     brand: "Lattafa Perfumes",
     image: imgYara,
     category: "Oriental Gourmand",
+    gender: "feminino" as const,
     topNotes: "Heliotrópio, Orquídea e Tangerina",
     heartNotes: "Notas Gourmand e Notas Tropicais",
     baseNotes: "Almíscar, Baunilha e Sândalo",
@@ -158,6 +165,7 @@ const sobEncomenda = [
     brand: "Lattafa Perfumes",
     image: imgFakhar,
     category: "Floral Frutado",
+    gender: "feminino" as const,
     topNotes: "Pêssego, Pera, Laranja, Maçã e Groselha Preta",
     heartNotes: "Flor de Laranjeira, Rosa e Jasmim Sambac",
     baseNotes: "Baunilha, Patchouli, Sândalo e Almíscar",
@@ -176,6 +184,7 @@ const sobEncomenda = [
     brand: "Maison Alhambra",
     image: imgVictorioso,
     category: "Amadeirado Aromático",
+    gender: "masculino" as const,
     topNotes: "Pimenta Rosa e Limão",
     heartNotes: "Olíbano e Lavanda",
     baseNotes: "Fava Tonka e Âmbar",
@@ -195,6 +204,7 @@ const sobEncomenda = [
     brand: "Al Wataniah",
     image: imgAttar,
     category: "Oriental Especiado",
+    gender: "masculino" as const,
     topNotes: "Bergamota, Cítricos e Especiarias",
     heartNotes: "Rosa, Jasmim e Cedro",
     baseNotes: "Oud, Âmbar e Almíscar",
@@ -213,6 +223,7 @@ const sobEncomenda = [
     brand: "Al Wataniah",
     image: imgSabah,
     category: "Oriental Floral",
+    gender: "feminino" as const,
     topNotes: "Rosa Damascena e Açafrão",
     heartNotes: "Oud, Jasmim e Patchouli",
     baseNotes: "Baunilha, Almíscar e Sândalo",
@@ -315,11 +326,40 @@ const jsonLd = {
   }))
 };
 
+type GenderFilter = "todos" | "masculino" | "feminino";
+
+const GenderTabs = ({ active, onChange }: { active: GenderFilter; onChange: (g: GenderFilter) => void }) => (
+  <div className="flex items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
+    {([
+      { key: "todos" as const, label: "Todos" },
+      { key: "masculino" as const, label: "Masculino" },
+      { key: "feminino" as const, label: "Feminino" },
+    ]).map(({ key, label }) => (
+      <button
+        key={key}
+        onClick={() => onChange(key)}
+        className={`font-body text-[10px] sm:text-xs tracking-[0.15em] uppercase px-4 sm:px-6 py-2 sm:py-2.5 rounded-full border transition-all duration-300 active:scale-95 cursor-pointer ${
+          active === key
+            ? "bg-primary text-primary-foreground border-primary shadow-[0_2px_16px_hsl(42_65%_52%/0.3)]"
+            : "bg-transparent text-muted-foreground border-border/40 hover:text-gold hover:border-primary/30"
+        }`}
+      >
+        {label}
+      </button>
+    ))}
+  </div>
+);
+
 const Index = () => {
   const productsRef = useScrollReveal();
   const ctaRef = useScrollReveal();
   const statsRef = useScrollReveal();
   const scrollY = useParallax();
+  const [genderFilter, setGenderFilter] = useState<GenderFilter>("todos");
+  const [genderFilterEncomenda, setGenderFilterEncomenda] = useState<GenderFilter>("todos");
+
+  const filteredProducts = genderFilter === "todos" ? products : products.filter(p => p.gender === genderFilter);
+  const filteredEncomenda = genderFilterEncomenda === "todos" ? sobEncomenda : sobEncomenda.filter(p => p.gender === genderFilterEncomenda);
 
   return (
     <div className="min-h-screen bg-background relative" style={{ backgroundImage: "linear-gradient(to bottom, hsl(30 10% 5% / 0.7), hsl(30 10% 5% / 0.6)), url('/images/marble-bg.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center" }}>
@@ -543,8 +583,10 @@ const Index = () => {
             </p>
           </div>
 
+          <GenderTabs active={genderFilter} onChange={setGenderFilter} />
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-            {products.map((product, i) => (
+            {filteredProducts.map((product, i) => (
               <article key={product.name} data-reveal data-delay={String(i * 100)}>
                 <ProductCard {...product} />
               </article>
@@ -569,8 +611,10 @@ const Index = () => {
             </p>
           </div>
 
+          <GenderTabs active={genderFilterEncomenda} onChange={setGenderFilterEncomenda} />
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-            {sobEncomenda.map((product, i) => (
+            {filteredEncomenda.map((product, i) => (
               <article key={product.name} data-reveal data-delay={String(i * 100)}>
                 <ProductCard {...product} />
               </article>
