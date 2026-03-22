@@ -31,6 +31,7 @@ const products = [
     heartNotes: "Lavanda, Pimenta de Szechuan, Anis Estrelado e Noz-moscada",
     baseNotes: "Ambroxan e Baunilha",
     pricePix: "R$ 205,00",
+    stock: 4,
     priceCredit: "R$ 227,55",
     inspiration: "Sauvage",
     accords: [
