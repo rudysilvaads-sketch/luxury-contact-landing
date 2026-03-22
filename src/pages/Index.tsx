@@ -7,6 +7,7 @@ const GoldParticles = lazy(() => import("@/components/GoldParticles"));
 const TestimonialCarousel = lazy(() => import("@/components/TestimonialCarousel"));
 const FlashOffer = lazy(() => import("@/components/FlashOffer"));
 const InstallPrompt = lazy(() => import("@/components/InstallPrompt"));
+import heroBg from "@/assets/hero-bg.jpg";
 import logoLgs from "@/assets/logo-lgs.png";
 import imgSalvo from "@/assets/perfume-salvo-bg.jpg";
 import imgNo2Men from "@/assets/perfume-no2men-bg.jpg";
