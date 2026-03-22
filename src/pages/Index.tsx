@@ -93,6 +93,7 @@ const products = [
     heartNotes: "Patchouli, Café e Íris",
     baseNotes: "Baunilha, Âmbar, Madeira Seca, Benjoim e Ládano",
     pricePix: "R$ 240,00",
+    stock: 3,
     priceCredit: "R$ 266,40",
     inspiration: "Sauvage Elixir",
     accords: [
