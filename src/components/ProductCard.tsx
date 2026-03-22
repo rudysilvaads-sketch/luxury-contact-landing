@@ -35,6 +35,7 @@ const ProductCard = ({
   priceCredit,
   accords,
   inspiration,
+  stock,
 }: ProductCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
