@@ -3,16 +3,16 @@ import { MessageCircle, Instagram, ChevronDown, Star, Sparkles, Phone, MapPin, C
 import ProductCard from "@/components/ProductCard";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoLgs from "@/assets/logo-lgs.png";
-import imgSalvo from "@/assets/perfume-salvo.jpg";
-import imgNo2Men from "@/assets/perfume-no2men.jpg";
-import imgLeonie from "@/assets/perfume-leonie.jpg";
-import imgAsad from "@/assets/perfume-asad.jpg";
-import imgVivacite from "@/assets/perfume-vivacite.jpg";
-import imgComo from "@/assets/como-moiselle.jpeg";
-import imgYara from "@/assets/perfume-yara.jpg";
-import imgFakhar from "@/assets/perfume-fakhar.jpg";
-import imgVictorioso from "@/assets/perfume-victorioso.jpg";
-import imgAttar from "@/assets/perfume-attar.jpg";
+import imgSalvo from "@/assets/perfume-salvo-bg.jpg";
+import imgNo2Men from "@/assets/perfume-no2men-bg.jpg";
+import imgLeonie from "@/assets/perfume-leonie-bg.jpg";
+import imgAsad from "@/assets/perfume-asad-bg.jpg";
+import imgVivacite from "@/assets/perfume-vivacite-bg.jpg";
+import imgComo from "@/assets/como-moiselle-bg.jpg";
+import imgYara from "@/assets/perfume-yara-bg.jpg";
+import imgFakhar from "@/assets/perfume-fakhar-bg.jpg";
+import imgVictorioso from "@/assets/perfume-victorioso-bg.jpg";
+import imgAttar from "@/assets/perfume-attar-bg.jpg";
 import imgSabah from "@/assets/sabah-al-ward.jpeg";
 import { Helmet } from "react-helmet-async";
 
