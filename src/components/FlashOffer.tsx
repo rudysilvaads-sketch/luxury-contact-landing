@@ -67,7 +67,7 @@ export default function FlashOffer() {
           </h3>
 
           <p className="font-body text-xs sm:text-sm text-muted-foreground max-w-md mx-auto">
-            Mencione o código <span className="text-gold font-medium">LGS10</span> no WhatsApp e ganhe desconto exclusivo em qualquer perfume.
+            Mencione o código <span className="text-gold font-medium">LGS5</span> no WhatsApp e ganhe desconto exclusivo em qualquer perfume.
           </p>
 
           {/* Countdown */}
