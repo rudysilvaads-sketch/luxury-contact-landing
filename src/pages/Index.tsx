@@ -19,7 +19,6 @@ import imgFakhar from "@/assets/perfume-fakhar-bg.jpg";
 import imgVictorioso from "@/assets/perfume-victorioso-bg.jpg";
 import imgAttar from "@/assets/perfume-attar-bg.jpg";
 import imgSabah from "@/assets/sabah-al-ward-bg.jpg";
-import { Helmet } from "react-helmet-async";
 
 const WHATSAPP_NUMBER = "5511988742967";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de ver o catálogo completo de perfumes.")}`;
