@@ -150,6 +150,14 @@ const ProductCard = ({
             </div>
           )}
 
+          {stock !== undefined && stock <= 5 && (
+            <div className="absolute top-4 right-4 z-10">
+              <span className="font-body text-[9px] tracking-wider uppercase px-2.5 py-1 rounded-full bg-destructive/80 backdrop-blur-md text-foreground border border-destructive/40 shadow-lg flex items-center gap-1 animate-pulse">
+                🔥 {stock === 1 ? "Última unidade" : `Últimas ${stock} un.`}
+              </span>
+            </div>
+          )}
+
         </div>
 
         {/* Content — also subtly parallax */}
