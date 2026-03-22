@@ -715,7 +715,7 @@ const Index = () => {
       </section>
 
       {/* ===== FLASH OFFER ===== */}
-      <FlashOffer />
+      <Suspense fallback={null}><FlashOffer /></Suspense>
 
       {/* ===== SOCIAL PROOF ===== */}
       <section className="py-14 sm:py-20 bg-surface-elevated relative overflow-hidden" ref={useScrollReveal()} aria-label="Depoimentos">
