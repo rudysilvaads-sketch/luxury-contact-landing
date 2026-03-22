@@ -564,51 +564,101 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ===== FEATURED PRODUCT ===== */}
-      <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden" ref={useScrollReveal()} aria-label="Destaque">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-surface-elevated/50 to-background" />
-        <div className="container relative px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-            <div data-reveal>
-              <div className="relative rounded-xl overflow-hidden glow-gold aspect-[3/4] max-w-sm sm:max-w-md mx-auto lg:mx-0">
-                <img src={imgAsad} alt="Asad - Lattafa Perfumes - Perfume Oriental Masculino" className="w-full h-full object-cover" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                  <div className="flex items-center gap-1.5 sm:gap-2 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 sm:w-3.5 sm:h-3.5 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <p className="font-body text-[10px] sm:text-xs text-foreground/70">Mais vendido do mês</p>
-                </div>
+      {/* ===== FAVORITO DA SEMANA ===== */}
+      <section className="relative overflow-hidden" ref={useScrollReveal()} aria-label="Favorito da Semana">
+        {/* Full-bleed background image */}
+        <div className="absolute inset-0">
+          <img src={imgAsad} alt="" aria-hidden="true" className="w-full h-full object-cover" loading="lazy" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
+        </div>
+
+        <div className="container relative px-4 sm:px-6 py-20 sm:py-28 md:py-36">
+          <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center">
+            {/* Story side */}
+            <div data-reveal className="space-y-5 sm:space-y-7 text-center lg:text-left order-2 lg:order-1">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5">
+                <Sparkles className="w-3 h-3 text-gold" />
+                <span className="font-body text-[10px] tracking-[0.3em] uppercase text-gold">Favorito da Semana</span>
               </div>
-            </div>
-            <div data-reveal data-delay="200" className="space-y-4 sm:space-y-6 text-center lg:text-left">
-              <p className="font-body text-[10px] tracking-[0.4em] uppercase text-gold">
-                Destaque da Coleção
-              </p>
-              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-light text-foreground leading-[0.9]">
+
+              <h2 className="font-display text-5xl sm:text-6xl md:text-7xl font-light text-foreground leading-[0.85] tracking-tight">
                 Asad
               </h2>
-              <p className="font-display text-lg sm:text-xl italic text-gold-light">Lattafa Perfumes</p>
+              <p className="font-display text-lg sm:text-xl italic text-gold-light tracking-wide">por Lattafa Perfumes</p>
+
               <GoldDivider />
-              <p className="font-body text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-md mx-auto lg:mx-0">
-                Uma fragrância oriental poderosa e sofisticada. Notas de Pimenta Preta e Tabaco no topo,
-                Patchouli e Café no coração, com uma base envolvente de Baunilha e Âmbar. Inspirado no icônico Sauvage Elixir.
+
+              {/* Storytelling */}
+              <p className="font-display text-base sm:text-lg italic text-foreground/70 leading-relaxed max-w-md mx-auto lg:mx-0">
+                "Nascido nas areias douradas do Oriente, Asad carrega a força do leão em cada borrifada.
+                Uma fragrância que não pede licença — ela conquista."
               </p>
-              <div className="pt-2">
-                <p className="font-display text-3xl sm:text-4xl font-semibold gold-gradient-text mb-1">R$ 240,00</p>
-                <p className="font-body text-[10px] sm:text-xs text-muted-foreground">no pix · ou R$ 266,40 em 2x sem juros</p>
+
+              {/* Pirâmide olfativa visual */}
+              <div className="space-y-3 max-w-md mx-auto lg:mx-0">
+                <div className="flex items-start gap-3 p-3 rounded-lg bg-card/30 backdrop-blur-sm border border-border/20">
+                  <span className="font-body text-[9px] tracking-[0.2em] uppercase text-gold w-14 pt-0.5 shrink-0">Topo</span>
+                  <p className="font-body text-xs text-foreground/80">Pimenta Preta · Tabaco · Abacaxi</p>
+                </div>
+                <div className="flex items-start gap-3 p-3 rounded-lg bg-card/30 backdrop-blur-sm border border-border/20">
+                  <span className="font-body text-[9px] tracking-[0.2em] uppercase text-gold w-14 pt-0.5 shrink-0">Coração</span>
+                  <p className="font-body text-xs text-foreground/80">Patchouli · Café · Íris</p>
+                </div>
+                <div className="flex items-start gap-3 p-3 rounded-lg bg-card/30 backdrop-blur-sm border border-border/20">
+                  <span className="font-body text-[9px] tracking-[0.2em] uppercase text-gold w-14 pt-0.5 shrink-0">Base</span>
+                  <p className="font-body text-xs text-foreground/80">Baunilha · Âmbar · Madeira Seca · Benjoim</p>
+                </div>
               </div>
-              <a
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Tenho interesse no perfume Asad - Lattafa. Poderia me dar mais informações?")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 sm:gap-3 px-8 sm:px-10 py-3.5 sm:py-4 rounded-full bg-primary text-primary-foreground font-body text-xs sm:text-sm font-medium tracking-wider uppercase transition-all duration-500 hover:shadow-[0_4px_40px_hsl(42_65%_52%/0.4)] active:scale-[0.97]"
-              >
-                <MessageCircle className="w-4 h-4" />
-                Garantir o meu
-              </a>
+
+              <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 pt-2">
+                <div>
+                  <p className="font-display text-3xl sm:text-4xl font-semibold gold-gradient-text">R$ 240,00</p>
+                  <p className="font-body text-[10px] text-muted-foreground mt-0.5">no pix · ou R$ 266,40 em 2x</p>
+                </div>
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Tenho interesse no perfume Asad - Lattafa. Poderia me dar mais informações?")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/btn relative inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-body text-xs font-medium tracking-wider uppercase overflow-hidden transition-all duration-500 hover:shadow-[0_4px_40px_hsl(42_65%_52%/0.4)] active:scale-[0.97]"
+                >
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700" />
+                  <MessageCircle className="w-4 h-4 relative z-10" />
+                  <span className="relative z-10">Garantir o meu</span>
+                </a>
+              </div>
+
+              {/* Social proof micro */}
+              <div className="flex items-center justify-center lg:justify-start gap-3 pt-2">
+                <div className="flex -space-x-2">
+                  {["M", "R", "J"].map((initial) => (
+                    <div key={initial} className="w-7 h-7 rounded-full border-2 border-background bg-card flex items-center justify-center">
+                      <span className="font-body text-[9px] text-gold">{initial}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="font-body text-[10px] text-muted-foreground">+47 pessoas compraram esta semana</p>
+              </div>
+            </div>
+
+            {/* Image side - floating bottle */}
+            <div data-reveal data-delay="300" className="order-1 lg:order-2 flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-primary/10 blur-[80px] scale-75" />
+                <img
+                  src={imgAsad}
+                  alt="Asad - Lattafa Perfumes"
+                  className="relative w-64 sm:w-72 md:w-80 lg:w-96 aspect-[3/4] object-cover rounded-2xl shadow-2xl animate-float ring-1 ring-primary/10"
+                  loading="lazy"
+                />
+                {/* Floating badge */}
+                <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 px-4 py-2 rounded-full bg-card border border-primary/30 shadow-lg">
+                  <p className="font-body text-[10px] text-gold tracking-wider uppercase flex items-center gap-1.5">
+                    <Star className="w-3 h-3 fill-primary text-primary" />
+                    Inspirado no Sauvage Elixir
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
