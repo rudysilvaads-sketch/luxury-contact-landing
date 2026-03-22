@@ -202,7 +202,7 @@ const ProductCard = ({
             <div className="flex items-end justify-between">
               <div>
                 <p className="font-body text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Preço no Pix</p>
-                <span className="font-display text-3xl font-semibold gold-gradient-text">{pricePix}</span>
+                <span className="font-display text-2xl sm:text-3xl font-semibold gold-gradient-text">{pricePix}</span>
               </div>
               <div className="text-right">
                 <p className="font-body text-xs text-muted-foreground">{priceCredit}</p>
