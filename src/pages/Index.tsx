@@ -4,6 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import GoldParticles from "@/components/GoldParticles";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import FlashOffer from "@/components/FlashOffer";
+import InstallPrompt from "@/components/InstallPrompt";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoLgs from "@/assets/logo-lgs.png";
 import imgSalvo from "@/assets/perfume-salvo-bg.jpg";
@@ -371,6 +372,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative" style={{ backgroundImage: "linear-gradient(to bottom, hsl(30 10% 5% / 0.7), hsl(30 10% 5% / 0.6)), url('/images/marble-bg.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center" }}>
+      <InstallPrompt />
       <Helmet>
         <title>LGs Perfumes — Perfumes Importados em SP | Fragrâncias Exclusivas</title>
         <meta name="description" content="Compre perfumes importados originais em São Paulo. Lattafa, Maison Alhambra e mais. Preços a partir de R$200. Parcelamento em 2x. Atendimento via WhatsApp." />

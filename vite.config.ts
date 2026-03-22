@@ -19,9 +19,10 @@ export default defineConfig(({ mode }) => ({
     VitePWA({
       registerType: "autoUpdate",
       workbox: {
-        globPatterns: ["**/*.{js,css,html,ico,png,jpg,jpeg,svg,webp,woff,woff2}"],
-        navigateFallbackDenylist: [/^\/~oauth/],
-      },
+      globPatterns: ["**/*.{js,css,html,ico,png,jpg,jpeg,svg,webp,woff,woff2}"],
+      maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+      navigateFallbackDenylist: [/^\/~oauth/],
+    },
       manifest: {
         name: "LGs Perfumes — Fragrâncias Importadas",
         short_name: "LGs Perfumes",
