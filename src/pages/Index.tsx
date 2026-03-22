@@ -595,7 +595,18 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ===== SOB ENCOMENDA ===== */}
+      {/* ===== MARQUEE DIVIDER ===== */}
+      <div className="relative py-6 sm:py-8 border-y border-primary/15 overflow-hidden">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <span key={i} className="font-display text-lg sm:text-2xl font-light text-gold/30 mx-6 sm:mx-10 tracking-widest uppercase shrink-0">
+              LGs Perfumes Árabes
+              <span className="inline-block mx-6 sm:mx-10 text-primary/40">✦</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
       <section className="py-16 sm:py-24 md:py-32 relative" ref={useScrollReveal()} aria-label="Perfumes sob encomenda">
         <div className="container px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-20 space-y-3 sm:space-y-4" data-reveal>
