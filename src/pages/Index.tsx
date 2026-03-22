@@ -526,6 +526,43 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ===== WHY LGs ===== */}
+      <section className="py-16 sm:py-24 relative overflow-hidden" ref={useScrollReveal()} aria-label="Por que escolher a LGs">
+        <div className="container px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 space-y-3" data-reveal>
+            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-gold">
+              A Experiência LGs
+            </p>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-foreground leading-tight">
+              Por que nos escolher?
+            </h2>
+            <GoldDivider />
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { icon: Shield, title: "100% Originais", desc: "Todos os perfumes são importados e lacrados de fábrica" },
+              { icon: Truck, title: "Entrega Segura", desc: "Enviamos para todo o Brasil com embalagem premium" },
+              { icon: HeartHandshake, title: "Atendimento VIP", desc: "Consultoria personalizada para encontrar seu perfume ideal" },
+              { icon: Award, title: "Garantia Total", desc: "Satisfação garantida ou devolvemos seu dinheiro" },
+            ].map((item, i) => (
+              <div
+                key={item.title}
+                className="relative group/why p-5 sm:p-8 rounded-xl border border-border/30 bg-card/30 backdrop-blur-sm text-center space-y-3 sm:space-y-4 transition-all duration-500 hover:border-primary/30 hover:bg-card/60 hover:shadow-[0_8px_40px_hsl(42_65%_52%/0.08)]"
+                data-reveal
+                data-delay={String(i * 120)}
+              >
+                <div className="mx-auto w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-primary/20 flex items-center justify-center bg-primary/5 group-hover/why:bg-primary/10 group-hover/why:border-primary/40 transition-all duration-500">
+                  <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
+                </div>
+                <h3 className="font-display text-base sm:text-lg font-medium text-foreground">{item.title}</h3>
+                <p className="font-body text-[11px] sm:text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== FEATURED PRODUCT ===== */}
       <section className="py-16 sm:py-24 md:py-32 relative overflow-hidden" ref={useScrollReveal()} aria-label="Destaque">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-surface-elevated/50 to-background" />
