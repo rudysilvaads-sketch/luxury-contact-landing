@@ -724,7 +724,7 @@ const Index = () => {
           <p className="font-body text-[10px] tracking-[0.4em] uppercase text-gold">
             O que nossos clientes dizem
           </p>
-          <TestimonialCarousel />
+          <Suspense fallback={null}><TestimonialCarousel /></Suspense>
         </div>
       </section>
 
