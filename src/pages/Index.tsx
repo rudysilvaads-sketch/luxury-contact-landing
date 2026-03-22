@@ -8,7 +8,7 @@ import imgNo2Men from "@/assets/perfume-no2men.jpg";
 import imgLeonie from "@/assets/perfume-leonie.jpg";
 import imgAsad from "@/assets/perfume-asad.jpg";
 import imgVivacite from "@/assets/perfume-vivacite.jpg";
-import imgComo from "@/assets/perfume-como.jpg";
+import imgComo from "@/assets/como-moiselle.jpeg";
 import imgYara from "@/assets/perfume-yara.jpg";
 import imgFakhar from "@/assets/perfume-fakhar.jpg";
 import imgVictorioso from "@/assets/perfume-victorioso.jpg";
