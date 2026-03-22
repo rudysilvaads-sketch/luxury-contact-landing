@@ -13,7 +13,7 @@ import imgYara from "@/assets/perfume-yara-bg.jpg";
 import imgFakhar from "@/assets/perfume-fakhar-bg.jpg";
 import imgVictorioso from "@/assets/perfume-victorioso-bg.jpg";
 import imgAttar from "@/assets/perfume-attar-bg.jpg";
-import imgSabah from "@/assets/sabah-al-ward.jpeg";
+import imgSabah from "@/assets/sabah-al-ward-bg.jpg";
 import { Helmet } from "react-helmet-async";
 
 const WHATSAPP_NUMBER = "5511988742967";
