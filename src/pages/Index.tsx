@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, Instagram, ChevronDown, Star, Sparkles, Phone, MapPin, Clock } from "lucide-react";
+import { MessageCircle, Instagram, ChevronDown, Star, Sparkles, Phone, MapPin, Clock, Shield, Truck, Award, HeartHandshake } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
+import GoldParticles from "@/components/GoldParticles";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoLgs from "@/assets/logo-lgs.png";
 import imgSalvo from "@/assets/perfume-salvo-bg.jpg";
