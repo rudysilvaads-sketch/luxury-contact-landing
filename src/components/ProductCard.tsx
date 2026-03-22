@@ -198,7 +198,7 @@ const ProductCard = ({
           </div>
 
           {/* Price */}
-          <div className="pt-4 border-t border-border/40">
+          <div className="pt-2 sm:pt-4 border-t border-border/40">
             <div className="flex items-end justify-between">
               <div>
                 <p className="font-body text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Preço no Pix</p>
