@@ -73,6 +73,7 @@ const products = [
     heartNotes: "Flor de Laranjeira, Lavanda e Jasmim",
     baseNotes: "Almíscar, Baunilha, Cedro e Âmbar Cinzento",
     pricePix: "R$ 200,00",
+    stock: 5,
     priceCredit: "R$ 222,00",
     accords: [
       { name: "floral branco", color: "#d8ccb0" },
