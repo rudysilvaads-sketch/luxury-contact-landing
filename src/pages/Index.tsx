@@ -648,7 +648,7 @@ const Index = () => {
                 <img
                   src={imgAsad}
                   alt="Asad - Lattafa Perfumes"
-                  className="relative w-64 sm:w-72 md:w-80 lg:w-96 aspect-[3/4] object-cover rounded-2xl shadow-2xl animate-float ring-1 ring-primary/10"
+                  className="relative w-48 sm:w-64 md:w-72 lg:w-80 aspect-[3/4] object-contain rounded-2xl shadow-2xl animate-float ring-1 ring-primary/10"
                   loading="lazy"
                 />
                 {/* Floating badge */}
