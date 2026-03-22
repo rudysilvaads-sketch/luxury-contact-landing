@@ -279,24 +279,7 @@ function useScrollReveal() {
   return ref;
 }
 
-function useParallax() {
-  const [offset, setOffset] = useState(0);
-  useEffect(() => {
-    let ticking = false;
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setOffset(window.scrollY);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  return offset;
-}
+// Removed parallax for performance
 
 const GoldDivider = () => (
   <div className="flex items-center justify-center gap-4 py-2">
