@@ -158,7 +158,7 @@ const ProductCard = ({
           }}
         >
           <div>
-            <h3 className="font-display text-2xl sm:text-3xl font-medium text-foreground leading-none tracking-tight">
+            <h3 className="font-display text-xl sm:text-3xl font-medium text-foreground leading-none tracking-tight">
               {name}
             </h3>
             <p className="font-body text-sm text-gold-muted mt-1 tracking-wide">{brand}</p>
