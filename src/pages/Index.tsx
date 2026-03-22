@@ -400,16 +400,10 @@ const Index = () => {
 
       {/* ===== HERO ===== */}
       <header className="relative h-[100svh] min-h-[600px] sm:min-h-[700px] flex items-center justify-center overflow-hidden">
-        {/* Parallax BG */}
-        <div
-          className="absolute inset-0 w-full h-[120%] -top-[10%]"
-          style={{ transform: `translateY(${scrollY * 0.15}px)` }}
-        >
-          <img
-            src={heroBg}
-            alt="Fragrâncias importadas exclusivas"
-            className="w-full h-full object-cover"
-            fetchPriority="high"
+        <div className="absolute inset-0">
+          <div
+            className="w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: `url('/src/assets/hero-bg.jpg')` }}
           />
         </div>
         {/* Gradient overlays — stronger for contrast */}
