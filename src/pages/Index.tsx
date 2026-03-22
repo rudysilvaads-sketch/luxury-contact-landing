@@ -596,7 +596,7 @@ const Index = () => {
       </section>
 
       {/* ===== SOB ENCOMENDA ===== */}
-      <section className="py-16 sm:py-24 md:py-32 bg-surface-elevated relative" ref={useScrollReveal()} aria-label="Perfumes sob encomenda">
+      <section className="py-16 sm:py-24 md:py-32 relative" ref={useScrollReveal()} aria-label="Perfumes sob encomenda">
         <div className="container px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-20 space-y-3 sm:space-y-4" data-reveal>
             <p className="font-body text-[10px] tracking-[0.4em] uppercase text-gold">
