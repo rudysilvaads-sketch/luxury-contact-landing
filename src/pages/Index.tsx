@@ -676,7 +676,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-16 bg-primary/8 blur-3xl rounded-full" />
         <div className="flex animate-marquee whitespace-nowrap">
-          {Array.from({ length: 12 }).map((_, i) => (
+          {Array.from({ length: 6 }).map((_, i) => (
             <span key={i} className="font-display text-xl sm:text-3xl italic font-light shrink-0 flex items-center">
               <span className="gold-gradient-text mx-6 sm:mx-10 tracking-[0.2em] drop-shadow-[0_0_12px_hsl(42_65%_52%/0.3)]">
                 LGs Perfumes Árabes
