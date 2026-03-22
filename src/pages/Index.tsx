@@ -631,9 +631,9 @@ const Index = () => {
 
           <GenderTabs active={genderFilter} onChange={setGenderFilter} />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+          <div key={genderFilter} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
             {filteredProducts.map((product, i) => (
-              <article key={product.name} data-reveal data-delay={String(i * 100)}>
+              <article key={product.name} className="animate-fade-in" style={{ animationDelay: `${i * 80}ms`, animationFillMode: "both" }}>
                 <ProductCard {...product} />
               </article>
             ))}
