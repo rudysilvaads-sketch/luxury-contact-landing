@@ -411,11 +411,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60" />
         <div className="absolute inset-0 bg-background/25" />
 
-        {/* Watermark — subtle brand presence */}
-        <div
-          className="absolute inset-0 flex items-center justify-center pointer-events-none z-[2]"
-          style={{ transform: `translateY(${scrollY * 0.08}px)` }}
-        >
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[2]">
           <img
             src={logoLgs}
             alt=""
