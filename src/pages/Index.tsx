@@ -418,6 +418,7 @@ const Index = () => {
 
         {/* Content */}
         <div className="relative z-10 text-center px-4 sm:px-6 max-w-3xl w-full">
+          <h1 className="sr-only">LGs Perfumes — Perfumes Importados Exclusivos em São Paulo</h1>
           {/* Logo only */}
           <div className="animate-hero-1 flex justify-center mb-6 sm:mb-8 mt-10 sm:mt-14">
             <img
