@@ -114,6 +114,7 @@ const products = [
     heartNotes: "Íris, Flor de Laranjeira e Jasmim",
     baseNotes: "Patchouli, Fava Tonka, Praliné e Baunilha",
     pricePix: "R$ 210,00",
+    stock: 6,
     priceCredit: "R$ 233,10",
     inspiration: "La Vie Est Belle",
     accords: [
