@@ -4,6 +4,9 @@ const GoldParticles = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    // Skip on mobile for performance
+    if (window.innerWidth < 768) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -27,7 +30,7 @@ const GoldParticles = () => {
     };
 
     const createParticles = () => {
-      const count = Math.min(Math.floor(window.innerWidth / 40), 35);
+      const count = Math.min(Math.floor(window.innerWidth / 60), 20);
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -57,16 +60,6 @@ const GoldParticles = () => {
         if (p.x < -10) p.x = canvas.width + 10;
         if (p.x > canvas.width + 10) p.x = -10;
 
-        // Glow
-        const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 4);
-        gradient.addColorStop(0, `hsla(42, 65%, 52%, ${currentOpacity})`);
-        gradient.addColorStop(1, `hsla(42, 65%, 52%, 0)`);
-        ctx.fillStyle = gradient;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size * 4, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Core
         ctx.fillStyle = `hsla(42, 65%, 72%, ${currentOpacity * 1.5})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
@@ -80,21 +73,22 @@ const GoldParticles = () => {
     createParticles();
     draw();
 
-    window.addEventListener("resize", () => {
+    const onResize = () => {
       resize();
       createParticles();
-    });
+    };
+    window.addEventListener("resize", onResize);
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", resize);
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-[1] pointer-events-none"
+      className="fixed inset-0 z-[1] pointer-events-none hidden md:block"
       style={{ mixBlendMode: "screen" }}
     />
   );

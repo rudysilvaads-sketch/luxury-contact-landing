@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { MessageCircle, Instagram, ChevronDown, Star, Sparkles, Phone, MapPin, Clock, Shield, Truck, Award, HeartHandshake } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
-import GoldParticles from "@/components/GoldParticles";
-import TestimonialCarousel from "@/components/TestimonialCarousel";
-import FlashOffer from "@/components/FlashOffer";
-import InstallPrompt from "@/components/InstallPrompt";
+import { Helmet } from "react-helmet-async";
+
+const GoldParticles = lazy(() => import("@/components/GoldParticles"));
+const TestimonialCarousel = lazy(() => import("@/components/TestimonialCarousel"));
+const FlashOffer = lazy(() => import("@/components/FlashOffer"));
+const InstallPrompt = lazy(() => import("@/components/InstallPrompt"));
 import heroBg from "@/assets/hero-bg.jpg";
 import logoLgs from "@/assets/logo-lgs.png";
 import imgSalvo from "@/assets/perfume-salvo-bg.jpg";
@@ -18,7 +20,6 @@ import imgFakhar from "@/assets/perfume-fakhar-bg.jpg";
 import imgVictorioso from "@/assets/perfume-victorioso-bg.jpg";
 import imgAttar from "@/assets/perfume-attar-bg.jpg";
 import imgSabah from "@/assets/sabah-al-ward-bg.jpg";
-import { Helmet } from "react-helmet-async";
 
 const WHATSAPP_NUMBER = "5511988742967";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Olá! Gostaria de ver o catálogo completo de perfumes.")}`;
@@ -278,24 +279,7 @@ function useScrollReveal() {
   return ref;
 }
 
-function useParallax() {
-  const [offset, setOffset] = useState(0);
-  useEffect(() => {
-    let ticking = false;
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setOffset(window.scrollY);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  return offset;
-}
+// Removed parallax for performance
 
 const GoldDivider = () => (
   <div className="flex items-center justify-center gap-4 py-2">
@@ -363,7 +347,7 @@ const Index = () => {
   const productsRef = useScrollReveal();
   const ctaRef = useScrollReveal();
   const statsRef = useScrollReveal();
-  const scrollY = useParallax();
+  
   const [genderFilter, setGenderFilter] = useState<GenderFilter>("todos");
   const [genderFilterEncomenda, setGenderFilterEncomenda] = useState<GenderFilter>("todos");
 
@@ -371,8 +355,8 @@ const Index = () => {
   const filteredEncomenda = genderFilterEncomenda === "todos" ? sobEncomenda : sobEncomenda.filter(p => p.gender === genderFilterEncomenda);
 
   return (
-    <div className="min-h-screen bg-background relative" style={{ backgroundImage: "linear-gradient(to bottom, hsl(30 10% 5% / 0.7), hsl(30 10% 5% / 0.6)), url('/images/marble-bg.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center" }}>
-      <InstallPrompt />
+    <div className="min-h-screen bg-background relative">
+      <Suspense fallback={null}><InstallPrompt /></Suspense>
       <Helmet>
         <title>LGs Perfumes — Perfumes Importados em SP | Fragrâncias Exclusivas</title>
         <meta name="description" content="Compre perfumes importados originais em São Paulo. Lattafa, Maison Alhambra e mais. Preços a partir de R$200. Parcelamento em 2x. Atendimento via WhatsApp." />
@@ -390,8 +374,7 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      {/* ===== GOLD PARTICLES ===== */}
-      <GoldParticles />
+      <Suspense fallback={null}><GoldParticles /></Suspense>
 
       {/* ===== FIXED NAV ===== */}
       <nav className="fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between bg-background/60 backdrop-blur-xl border-b border-border/20" role="navigation" aria-label="Navegação principal">
@@ -418,11 +401,7 @@ const Index = () => {
 
       {/* ===== HERO ===== */}
       <header className="relative h-[100svh] min-h-[600px] sm:min-h-[700px] flex items-center justify-center overflow-hidden">
-        {/* Parallax BG */}
-        <div
-          className="absolute inset-0 w-full h-[120%] -top-[10%]"
-          style={{ transform: `translateY(${scrollY * 0.15}px)` }}
-        >
+        <div className="absolute inset-0">
           <img
             src={heroBg}
             alt="Fragrâncias importadas exclusivas"
@@ -435,11 +414,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60" />
         <div className="absolute inset-0 bg-background/25" />
 
-        {/* Watermark — subtle brand presence */}
-        <div
-          className="absolute inset-0 flex items-center justify-center pointer-events-none z-[2]"
-          style={{ transform: `translateY(${scrollY * 0.08}px)` }}
-        >
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[2]">
           <img
             src={logoLgs}
             alt=""
@@ -701,7 +676,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-16 bg-primary/8 blur-3xl rounded-full" />
         <div className="flex animate-marquee whitespace-nowrap">
-          {Array.from({ length: 12 }).map((_, i) => (
+          {Array.from({ length: 6 }).map((_, i) => (
             <span key={i} className="font-display text-xl sm:text-3xl italic font-light shrink-0 flex items-center">
               <span className="gold-gradient-text mx-6 sm:mx-10 tracking-[0.2em] drop-shadow-[0_0_12px_hsl(42_65%_52%/0.3)]">
                 LGs Perfumes Árabes
@@ -740,7 +715,7 @@ const Index = () => {
       </section>
 
       {/* ===== FLASH OFFER ===== */}
-      <FlashOffer />
+      <Suspense fallback={null}><FlashOffer /></Suspense>
 
       {/* ===== SOCIAL PROOF ===== */}
       <section className="py-14 sm:py-20 bg-surface-elevated relative overflow-hidden" ref={useScrollReveal()} aria-label="Depoimentos">
@@ -749,7 +724,7 @@ const Index = () => {
           <p className="font-body text-[10px] tracking-[0.4em] uppercase text-gold">
             O que nossos clientes dizem
           </p>
-          <TestimonialCarousel />
+          <Suspense fallback={null}><TestimonialCarousel /></Suspense>
         </div>
       </section>
 
