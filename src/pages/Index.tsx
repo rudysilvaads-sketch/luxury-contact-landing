@@ -354,8 +354,8 @@ const Index = () => {
   const filteredEncomenda = genderFilterEncomenda === "todos" ? sobEncomenda : sobEncomenda.filter(p => p.gender === genderFilterEncomenda);
 
   return (
-    <div className="min-h-screen bg-background relative" style={{ backgroundImage: "linear-gradient(to bottom, hsl(30 10% 5% / 0.7), hsl(30 10% 5% / 0.6)), url('/images/marble-bg.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center" }}>
-      <InstallPrompt />
+    <div className="min-h-screen bg-background relative">
+      <Suspense fallback={null}><InstallPrompt /></Suspense>
       <Helmet>
         <title>LGs Perfumes — Perfumes Importados em SP | Fragrâncias Exclusivas</title>
         <meta name="description" content="Compre perfumes importados originais em São Paulo. Lattafa, Maison Alhambra e mais. Preços a partir de R$200. Parcelamento em 2x. Atendimento via WhatsApp." />
