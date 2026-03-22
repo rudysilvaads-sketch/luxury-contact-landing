@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, Instagram, ChevronDown, Star, Sparkles, Phone, MapPin, Clock } from "lucide-react";
+import { MessageCircle, Instagram, ChevronDown, Star, Sparkles, Phone, MapPin, Clock, Shield, Truck, Award, HeartHandshake } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
+import GoldParticles from "@/components/GoldParticles";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoLgs from "@/assets/logo-lgs.png";
 import imgSalvo from "@/assets/perfume-salvo-bg.jpg";
@@ -30,6 +31,7 @@ const products = [
     heartNotes: "Lavanda, Pimenta de Szechuan, Anis Estrelado e Noz-moscada",
     baseNotes: "Ambroxan e Baunilha",
     pricePix: "R$ 205,00",
+    stock: 4,
     priceCredit: "R$ 227,55",
     inspiration: "Sauvage",
     accords: [
@@ -50,6 +52,7 @@ const products = [
     heartNotes: "Gengibre e Cardamomo",
     baseNotes: "Vetiver, Incenso, Almíscar, Sândalo, Ládano e Madeira Guaiac",
     pricePix: "R$ 200,00",
+    stock: 2,
     priceCredit: "R$ 222,00",
     inspiration: "212 VIP",
     accords: [
@@ -70,6 +73,7 @@ const products = [
     heartNotes: "Flor de Laranjeira, Lavanda e Jasmim",
     baseNotes: "Almíscar, Baunilha, Cedro e Âmbar Cinzento",
     pricePix: "R$ 200,00",
+    stock: 5,
     priceCredit: "R$ 222,00",
     accords: [
       { name: "floral branco", color: "#d8ccb0" },
@@ -89,6 +93,7 @@ const products = [
     heartNotes: "Patchouli, Café e Íris",
     baseNotes: "Baunilha, Âmbar, Madeira Seca, Benjoim e Ládano",
     pricePix: "R$ 240,00",
+    stock: 3,
     priceCredit: "R$ 266,40",
     inspiration: "Sauvage Elixir",
     accords: [
@@ -109,6 +114,7 @@ const products = [
     heartNotes: "Íris, Flor de Laranjeira e Jasmim",
     baseNotes: "Patchouli, Fava Tonka, Praliné e Baunilha",
     pricePix: "R$ 210,00",
+    stock: 6,
     priceCredit: "R$ 233,10",
     inspiration: "La Vie Est Belle",
     accords: [
@@ -380,6 +386,9 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
+      {/* ===== GOLD PARTICLES ===== */}
+      <GoldParticles />
+
       {/* ===== FIXED NAV ===== */}
       <nav className="fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between bg-background/60 backdrop-blur-xl border-b border-border/20" role="navigation" aria-label="Navegação principal">
         <div className="flex items-center gap-2 sm:gap-3">
@@ -511,6 +520,43 @@ const Index = () => {
                 <p className="font-body text-[10px] sm:text-xs md:text-sm text-foreground/60 tracking-[0.15em] uppercase">
                   {stat.label}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== WHY LGs ===== */}
+      <section className="py-16 sm:py-24 relative overflow-hidden" ref={useScrollReveal()} aria-label="Por que escolher a LGs">
+        <div className="container px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 space-y-3" data-reveal>
+            <p className="font-body text-[10px] tracking-[0.4em] uppercase text-gold">
+              A Experiência LGs
+            </p>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-light text-foreground leading-tight">
+              Por que nos escolher?
+            </h2>
+            <GoldDivider />
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {[
+              { icon: Shield, title: "100% Originais", desc: "Todos os perfumes são importados e lacrados de fábrica" },
+              { icon: Truck, title: "Entrega Segura", desc: "Enviamos para todo o Brasil com embalagem premium" },
+              { icon: HeartHandshake, title: "Atendimento VIP", desc: "Consultoria personalizada para encontrar seu perfume ideal" },
+              { icon: Award, title: "Garantia Total", desc: "Satisfação garantida ou devolvemos seu dinheiro" },
+            ].map((item, i) => (
+              <div
+                key={item.title}
+                className="relative group/why p-5 sm:p-8 rounded-xl border border-border/30 bg-card/30 backdrop-blur-sm text-center space-y-3 sm:space-y-4 transition-all duration-500 hover:border-primary/30 hover:bg-card/60 hover:shadow-[0_8px_40px_hsl(42_65%_52%/0.08)]"
+                data-reveal
+                data-delay={String(i * 120)}
+              >
+                <div className="mx-auto w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-primary/20 flex items-center justify-center bg-primary/5 group-hover/why:bg-primary/10 group-hover/why:border-primary/40 transition-all duration-500">
+                  <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
+                </div>
+                <h3 className="font-display text-base sm:text-lg font-medium text-foreground">{item.title}</h3>
+                <p className="font-body text-[11px] sm:text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>

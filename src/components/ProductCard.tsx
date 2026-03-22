@@ -18,6 +18,7 @@ interface ProductCardProps {
   priceCredit: string;
   accords: Accord[];
   inspiration?: string;
+  stock?: number;
 }
 
 const WHATSAPP_NUMBER = "5511988742967";
@@ -34,12 +35,13 @@ const ProductCard = ({
   priceCredit,
   accords,
   inspiration,
+  stock,
 }: ProductCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
   const [isHovered, setIsHovered] = useState(false);
-  
+
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -144,6 +146,14 @@ const ProductCard = ({
               <span className="font-body text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-full bg-background/60 backdrop-blur-md text-gold-light flex items-center gap-1 shadow-lg">
                 <Sparkles className="w-3 h-3" />
                 Insp. {inspiration}
+              </span>
+            </div>
+          )}
+
+          {stock !== undefined && stock <= 5 && (
+            <div className="absolute top-4 right-4 z-10">
+              <span className="font-body text-[9px] tracking-wider uppercase px-2.5 py-1 rounded-full bg-destructive/80 backdrop-blur-md text-foreground border border-destructive/40 shadow-lg flex items-center gap-1 animate-pulse">
+                🔥 {stock === 1 ? "Última unidade" : `Últimas ${stock} un.`}
               </span>
             </div>
           )}
