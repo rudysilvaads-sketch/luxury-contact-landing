@@ -322,7 +322,7 @@ const Index = () => {
   const scrollY = useParallax();
 
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="min-h-screen bg-background relative" style={{ backgroundImage: "url('/images/marble-bg.jpg')", backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center" }}>
       <Helmet>
         <title>LGs Perfumes — Perfumes Importados em SP | Fragrâncias Exclusivas</title>
         <meta name="description" content="Compre perfumes importados originais em São Paulo. Lattafa, Maison Alhambra e mais. Preços a partir de R$200. Parcelamento em 2x. Atendimento via WhatsApp." />
