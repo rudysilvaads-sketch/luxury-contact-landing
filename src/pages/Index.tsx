@@ -737,6 +737,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ===== FLASH OFFER ===== */}
+      <FlashOffer />
+
       {/* ===== SOCIAL PROOF ===== */}
       <section className="py-14 sm:py-20 bg-surface-elevated relative overflow-hidden" ref={useScrollReveal()} aria-label="Depoimentos">
         <div className="absolute inset-0 animate-shimmer-gold" />
