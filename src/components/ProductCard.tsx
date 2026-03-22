@@ -165,7 +165,7 @@ const ProductCard = ({
           </div>
 
           {/* Olfactive pyramid */}
-          <div className="space-y-2.5 font-body text-[13px] text-secondary-foreground/75 leading-relaxed">
+          <div className="space-y-1 sm:space-y-2.5 font-body text-[11px] sm:text-[13px] text-secondary-foreground/75 leading-relaxed">
             <div className="flex gap-3">
               <span className="text-gold text-[10px] uppercase tracking-[0.15em] font-medium w-16 shrink-0 pt-0.5">Topo</span>
               <span>{topNotes}</span>
