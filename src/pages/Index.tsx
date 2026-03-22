@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { MessageCircle, Instagram, ChevronDown, Star, Sparkles, Phone, MapPin, Clock, Shield, Truck, Award, HeartHandshake } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import GoldParticles from "@/components/GoldParticles";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
 import heroBg from "@/assets/hero-bg.jpg";
 import logoLgs from "@/assets/logo-lgs.png";
 import imgSalvo from "@/assets/perfume-salvo-bg.jpg";
@@ -692,10 +693,7 @@ const Index = () => {
           <p className="font-body text-[10px] tracking-[0.4em] uppercase text-gold">
             O que nossos clientes dizem
           </p>
-          <blockquote className="font-display text-xl sm:text-2xl md:text-3xl font-light italic text-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            "Perfumes incríveis com preço justo. O atendimento é impecável — sempre me ajudam a escolher a fragrância perfeita."
-          </blockquote>
-          <p className="font-body text-xs sm:text-sm text-muted-foreground">— Mariana S., cliente desde 2024</p>
+          <TestimonialCarousel />
         </div>
       </section>
 
