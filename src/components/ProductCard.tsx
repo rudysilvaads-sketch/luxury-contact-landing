@@ -216,7 +216,7 @@ const ProductCard = ({
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/btn flex items-center justify-center gap-2.5 w-full py-3.5 rounded-lg bg-primary text-primary-foreground font-body text-sm font-medium tracking-wider uppercase relative overflow-hidden transition-all duration-400 hover:shadow-[0_4px_30px_hsl(42_65%_52%/0.35)] active:scale-[0.97]"
+            className="group/btn flex items-center justify-center gap-2.5 w-full py-2.5 sm:py-3.5 rounded-lg bg-primary text-primary-foreground font-body text-xs sm:text-sm font-medium tracking-wider uppercase relative overflow-hidden transition-all duration-400 hover:shadow-[0_4px_30px_hsl(42_65%_52%/0.35)] active:scale-[0.97]"
             style={{ transform: "translateZ(20px)" }}
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700" />
