@@ -181,7 +181,7 @@ const ProductCard = ({
           </div>
 
           {/* Accords */}
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-1">
             {accords.map((accord) => (
               <span
                 key={accord.name}
