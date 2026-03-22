@@ -52,6 +52,7 @@ const products = [
     heartNotes: "Gengibre e Cardamomo",
     baseNotes: "Vetiver, Incenso, Almíscar, Sândalo, Ládano e Madeira Guaiac",
     pricePix: "R$ 200,00",
+    stock: 2,
     priceCredit: "R$ 222,00",
     inspiration: "212 VIP",
     accords: [
