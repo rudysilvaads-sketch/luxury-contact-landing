@@ -18,6 +18,7 @@ interface ProductCardProps {
   priceCredit: string;
   accords: Accord[];
   inspiration?: string;
+  stock?: number;
 }
 
 const WHATSAPP_NUMBER = "5511988742967";
