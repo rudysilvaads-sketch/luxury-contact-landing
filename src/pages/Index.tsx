@@ -392,8 +392,8 @@ const Index = () => {
       {/* ===== FIXED NAV ===== */}
       <nav className="fixed top-0 left-0 right-0 z-50 py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between bg-background/60 backdrop-blur-xl border-b border-border/20" role="navigation" aria-label="Navegação principal">
         <div className="flex items-center gap-2 sm:gap-3">
-          <img src={logoLgs} alt="LGs Perfumes" className="w-20 h-20 sm:w-24 sm:h-24 object-contain" width={96} height={96} />
-          <span className="font-display text-base sm:text-lg gold-gradient-text">LGs Perfumes</span>
+          <img src={logoLgs} alt="LGs Perfumes" className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain" width={112} height={112} />
+          <span className="font-display text-base sm:text-lg md:text-2xl gold-gradient-text">LGs Perfumes</span>
         </div>
         <div className="flex items-center gap-2 sm:gap-4">
           <a href="#catalogo" className="font-body text-[10px] sm:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase text-muted-foreground hover:text-gold transition-colors duration-300">
