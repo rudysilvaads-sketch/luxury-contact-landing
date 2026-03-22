@@ -107,7 +107,7 @@ const ProductCard = ({
         />
 
         {/* Image with 3D depth layer */}
-        <div className="relative overflow-hidden aspect-[3/4] sm:aspect-[4/5]" style={{ transformStyle: "preserve-3d" }}>
+        <div className="relative overflow-hidden aspect-[4/3] sm:aspect-[4/5]" style={{ transformStyle: "preserve-3d" }}>
           <img
             src={image}
             alt={`Perfume ${name} - ${brand}`}
@@ -152,20 +152,20 @@ const ProductCard = ({
 
         {/* Content — also subtly parallax */}
         <div
-          className="p-4 sm:p-6 space-y-4 sm:space-y-5 relative"
+          className="p-3 sm:p-6 space-y-2 sm:space-y-5 relative"
           style={{
             transform: `translateZ(10px)`,
           }}
         >
           <div>
-            <h3 className="font-display text-2xl sm:text-3xl font-medium text-foreground leading-none tracking-tight">
+            <h3 className="font-display text-xl sm:text-3xl font-medium text-foreground leading-none tracking-tight">
               {name}
             </h3>
             <p className="font-body text-sm text-gold-muted mt-1 tracking-wide">{brand}</p>
           </div>
 
           {/* Olfactive pyramid */}
-          <div className="space-y-2.5 font-body text-[13px] text-secondary-foreground/75 leading-relaxed">
+          <div className="space-y-1 sm:space-y-2.5 font-body text-[11px] sm:text-[13px] text-secondary-foreground/75 leading-relaxed">
             <div className="flex gap-3">
               <span className="text-gold text-[10px] uppercase tracking-[0.15em] font-medium w-16 shrink-0 pt-0.5">Topo</span>
               <span>{topNotes}</span>
@@ -181,11 +181,11 @@ const ProductCard = ({
           </div>
 
           {/* Accords */}
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-1">
             {accords.map((accord) => (
               <span
                 key={accord.name}
-                className="text-[10px] font-body font-medium tracking-wide px-2.5 py-1 rounded-full"
+                className="text-[9px] sm:text-[10px] font-body font-medium tracking-wide px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full"
                 style={{
                   backgroundColor: `${accord.color}18`,
                   color: accord.color,
@@ -198,11 +198,11 @@ const ProductCard = ({
           </div>
 
           {/* Price */}
-          <div className="pt-4 border-t border-border/40">
+          <div className="pt-2 sm:pt-4 border-t border-border/40">
             <div className="flex items-end justify-between">
               <div>
                 <p className="font-body text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Preço no Pix</p>
-                <span className="font-display text-3xl font-semibold gold-gradient-text">{pricePix}</span>
+                <span className="font-display text-2xl sm:text-3xl font-semibold gold-gradient-text">{pricePix}</span>
               </div>
               <div className="text-right">
                 <p className="font-body text-xs text-muted-foreground">{priceCredit}</p>
@@ -216,7 +216,7 @@ const ProductCard = ({
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="group/btn flex items-center justify-center gap-2.5 w-full py-3.5 rounded-lg bg-primary text-primary-foreground font-body text-sm font-medium tracking-wider uppercase relative overflow-hidden transition-all duration-400 hover:shadow-[0_4px_30px_hsl(42_65%_52%/0.35)] active:scale-[0.97]"
+            className="group/btn flex items-center justify-center gap-2.5 w-full py-2.5 sm:py-3.5 rounded-lg bg-primary text-primary-foreground font-body text-xs sm:text-sm font-medium tracking-wider uppercase relative overflow-hidden transition-all duration-400 hover:shadow-[0_4px_30px_hsl(42_65%_52%/0.35)] active:scale-[0.97]"
             style={{ transform: "translateZ(20px)" }}
           >
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-700" />
