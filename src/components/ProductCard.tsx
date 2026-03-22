@@ -185,7 +185,7 @@ const ProductCard = ({
             {accords.map((accord) => (
               <span
                 key={accord.name}
-                className="text-[10px] font-body font-medium tracking-wide px-2.5 py-1 rounded-full"
+                className="text-[9px] sm:text-[10px] font-body font-medium tracking-wide px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full"
                 style={{
                   backgroundColor: `${accord.color}18`,
                   color: accord.color,
