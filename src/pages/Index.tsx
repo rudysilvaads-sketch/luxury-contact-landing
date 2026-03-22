@@ -596,12 +596,17 @@ const Index = () => {
       </section>
 
       {/* ===== MARQUEE DIVIDER ===== */}
-      <div className="relative py-6 sm:py-8 border-y border-primary/15 overflow-hidden">
+      <div className="relative py-8 sm:py-10 border-y border-primary/20 overflow-hidden">
+        {/* Glow effect behind text */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-16 bg-primary/8 blur-3xl rounded-full" />
         <div className="flex animate-marquee whitespace-nowrap">
           {Array.from({ length: 12 }).map((_, i) => (
-            <span key={i} className="font-display text-lg sm:text-2xl font-light text-gold/30 mx-6 sm:mx-10 tracking-widest uppercase shrink-0">
-              LGs Perfumes Árabes
-              <span className="inline-block mx-6 sm:mx-10 text-primary/40">✦</span>
+            <span key={i} className="font-display text-xl sm:text-3xl italic font-light shrink-0 flex items-center">
+              <span className="gold-gradient-text mx-6 sm:mx-10 tracking-[0.2em] drop-shadow-[0_0_12px_hsl(42_65%_52%/0.3)]">
+                LGs Perfumes Árabes
+              </span>
+              <span className="text-primary/50 text-sm mx-2">✦</span>
             </span>
           ))}
         </div>
